@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fizz & Chill Soda Hub | Jamnagar's Favorite Soda, Mocktails & Ice Creams</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            limeGlow: '#84cc16',     /* Primary: Electric Lime Green */
+            coolAqua: '#06b6d4',     /* Secondary: Cool Aqua */
+            lemonZest: '#facc15',    /* Accent: Lemon Zest */
+            softBlue: '#38bdf8',     /* Highlight: Soft Blue */
+            hubDark: '#0b1329',
+            hubCard: '#132042',
+            hubLight: '#f8fafc'
+          },
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          animation: {
+            'float-bubble': 'float 6s infinite ease-in-out',
+            'float-delayed': 'float 8s infinite 2s ease-in-out',
+            'pulse-glow': 'pulseGlow 2.5s infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-18px) rotate(6deg)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { opacity: '0.8', transform: 'scale(1)' },
+              '50%': { opacity: '1', transform: 'scale(1.05)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b1329;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #06b6d4;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #84cc16;
+    }
+
+    /* Fizz Bubbles Background Effect */
+    .bubble-layer {
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(132, 204, 22, 0.15) 2px, transparent 4px),
+        radial-gradient(circle at 80% 30%, rgba(6, 182, 212, 0.2) 3px, transparent 6px),
+        radial-gradient(circle at 40% 70%, rgba(250, 204, 21, 0.15) 2px, transparent 5px),
+        radial-gradient(circle at 90% 85%, rgba(56, 189, 248, 0.2) 4px, transparent 7px),
+        radial-gradient(circle at 25% 90%, rgba(132, 204, 22, 0.2) 3px, transparent 5px);
+      background-size: 180px 180px;
+    }
+
+    .glass-nav {
+      background: rgba(11, 19, 41, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .glass-card {
+      background: rgba(19, 32, 66, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(56, 189, 248, 0.15);
+    }
+    
+    .glass-card:hover {
+      border-color: rgba(132, 204, 22, 0.4);
+    }
+  </style>
+</head>
+
+<body class="bg-hubDark text-slate-100 font-body antialiased selection:bg-limeGlow selection:text-hubDark overflow-x-hidden bubble-layer">
+
+  <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
+  <div class="bg-gradient-to-r from-coolAqua via-limeGlow to-lemonZest text-hubDark text-xs sm:text-sm font-bold py-1.5 px-4 text-center shadow-md flex items-center justify-center gap-2">
+    <span class="animate-bounce">🥤</span>
+    <span>Welcome to Fizz & Chill Soda Hub at INOX Mall, Khodiyar Colony, Jamnagar!</span>
+    <span class="hidden md:inline bg-hubDark text-lemonZest px-2 py-0.5 rounded-full text-xs ml-2">⚡ Daily 8:00 AM - 11:00 PM</span>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="sticky top-0 z-50 glass-nav border-b border-slate-800 transition-all duration-300 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-limeGlow via-coolAqua to-lemonZest p-0.5 shadow-lg shadow-coolAqua/20 group-hover:scale-105 transition-transform duration-300">
+            <div class="w-full h-full bg-hubDark rounded-[14px] flex items-center justify-center">
+              <i class="fa-solid fa-glass-water-droplet text-2xl text-limeGlow group-hover:rotate-12 transition-transform"></i>
+            </div>
+          </div>
+          <div>
+            <span class="font-display font-black text-2xl sm:text-3xl tracking-tight text-white flex items-center">
+              FIZZ <span class="text-limeGlow mx-1">&</span> CHILL
+            </span>
+            <span class="text-[10px] tracking-widest text-coolAqua font-semibold uppercase block -mt-1">
+              Soda & Chill Hub • Jamnagar
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu Links -->
+        <div class="hidden lg:flex items-center space-x-7 text-sm font-medium">
+          <a href="#home" class="text-white hover:text-limeGlow transition-colors">Home</a>
+          <a href="#menu" class="text-slate-300 hover:text-limeGlow transition-colors">Menu Categories</a>
+          <a href="#mixology" class="text-slate-300 hover:text-lemonZest transition-colors flex items-center gap-1.5">
+            <i class="fa-solid fa-wand-magic-sparkles text-lemonZest text-xs"></i> DIY Soda Lab
+          </a>
+          <a href="#specials" class="text-slate-300 hover:text-limeGlow transition-colors">Top Picks</a>
+          <a href="#location" class="text-slate-300 hover:text-coolAqua transition-colors">Jamnagar Hub</a>
+        </div>
+
+        <!-- Action Items (Live Status, Search, Cart) -->
+        <div class="flex items-center gap-3">
+          <!-- Hub Live Open Status Pill -->
+          <div id="liveStatusBadge" class="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-slate-800/80 border border-slate-700">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+            <span id="liveStatusText" class="text-emerald-400">Open Now</span>
+          </div>
+
+          <!-- Quick Search Button -->
+          <button onclick="focusSearch()" aria-label="Search items" class="p-2.5 rounded-xl bg-slate-800/80 text-coolAqua hover:bg-coolAqua hover:text-hubDark border border-slate-700 hover:border-coolAqua transition-all duration-200">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+
+          <!-- Cart Trigger Button -->
+          <button onclick="toggleCartDrawer()" class="relative p-2.5 px-3.5 rounded-xl bg-gradient-to-r from-limeGlow to-coolAqua text-hubDark font-bold hover:brightness-110 shadow-lg shadow-limeGlow/20 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-basket-shopping text-base"></i>
+            <span class="hidden md:inline text-xs uppercase tracking-wider font-extrabold">Order</span>
+            <span id="cartBadgeCount" class="w-5 h-5 rounded-full bg-hubDark text-lemonZest text-xs flex items-center justify-center font-black">0</span>
+          </button>
+
+          <!-- Mobile Hamburger -->
+          <button onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white border border-slate-700">
+            <i id="menuIcon" class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Navigation -->
+      <div id="mobileMenu" class="hidden lg:hidden py-4 border-t border-slate-800 space-y-2">
+        <a href="#home" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-limeGlow font-medium">Home</a>
+        <a href="#menu" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-limeGlow font-medium">Menu Categories</a>
+        <a href="#mixology" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-lemonZest font-medium">DIY Soda Lab</a>
+        <a href="#specials" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-limeGlow font-medium">Top Specials</a>
+        <a href="#location" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-coolAqua font-medium">Jamnagar Hub & Map</a>
+        <div class="pt-2 flex items-center justify-between text-xs text-slate-400 px-3 border-t border-slate-800/80">
+          <span>🕒 Timings: 8:00 AM – 11:00 PM</span>
+          <span class="text-limeGlow font-semibold">INOX Mall, Khodiyar Colony</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SLIDER SECTION ================= -->
+  <section id="home" class="relative overflow-hidden pt-6 pb-12 sm:pt-10 sm:pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Carousel Container -->
+      <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-700/60 bg-hubCard">
+        
+        <div id="sliderWrapper" class="relative h-[480px] sm:h-[540px] md:h-[580px] w-full overflow-hidden">
+          
+          <!-- Slide 1: Chilled Sodas & Mocktails (Electric Vibes) -->
+          <div class="slide absolute inset-0 transition-opacity duration-700 opacity-100 flex items-center">
+            <img 
+              src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1600&q=80" 
+              alt="Electric Soda & Mocktails" 
+              class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.4] contrast-110"
+              onerror="this.src='https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1600&q=80'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-hubDark via-hubDark/70 to-transparent"></div>
+            
+            <div class="relative z-10 p-6 sm:p-12 md:p-16 max-w-2xl">
+              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-limeGlow/20 text-limeGlow border border-limeGlow/40 text-xs sm:text-sm font-bold uppercase tracking-wider mb-4">
+                <i class="fa-solid fa-bolt"></i> Jamnagar's Ultimate Fizz Experience
+              </span>
+              <h1 class="text-3xl sm:text-5xl md:text-6xl font-display font-black leading-tight text-white mb-4">
+                CHILL THE HEAT WITH <span class="text-transparent bg-clip-text bg-gradient-to-r from-limeGlow via-coolAqua to-lemonZest">SUPER FIZZ</span>
+              </h1>
+              <p class="text-slate-300 text-sm sm:text-base md:text-lg mb-8 leading-relaxed">
+                Quench your thirst with real Jamnagari Lemon Masala, Electric Orange, Blue Lagoon Soda, and refreshing Sprite twists. Chilled to pure perfection!
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a href="#menu" class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-limeGlow to-coolAqua text-hubDark font-bold hover:shadow-lg hover:shadow-limeGlow/30 hover:scale-105 transition-all text-sm sm:text-base flex items-center gap-2">
+                  <i class="fa-solid fa-glass-water"></i> Explore All Flavors
+                </a>
+                <a href="#location" class="px-6 py-3.5 rounded-2xl bg-slate-800/90 text-white font-semibold hover:bg-slate-700 border border-slate-600 transition-all text-sm sm:text-base flex items-center gap-2">
+                  <i class="fa-solid fa-location-dot text-lemonZest"></i> Visit at INOX Mall
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Indian Flavor Ice Creams & Thick Shakes -->
+          <div class="slide absolute inset-0 transition-opacity duration-700 opacity-0 pointer-events-none flex items-center">
+            <img 
+              src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=1600&q=80" 
+              alt="Indian Ice Creams and Shakes" 
+              class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.4] contrast-110"
+              onerror="this.src='https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=1600&q=80'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-hubDark via-hubDark/70 to-transparent"></div>
+            
+            <div class="relative z-10 p-6 sm:p-12 md:p-16 max-w-2xl">
+              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lemonZest/20 text-lemonZest border border-lemonZest/40 text-xs sm:text-sm font-bold uppercase tracking-wider mb-4">
+                <i class="fa-solid fa-ice-cream"></i> Royal Desi Indulgence
+              </span>
+              <h2 class="text-3xl sm:text-5xl md:text-6xl font-display font-black leading-tight text-white mb-4">
+                AUTHENTIC <span class="text-transparent bg-clip-text bg-gradient-to-r from-lemonZest to-limeGlow">INDIAN ICE-CREAMS</span> & THICK SHAKES
+              </h2>
+              <p class="text-slate-300 text-sm sm:text-base md:text-lg mb-8 leading-relaxed">
+                Relish Shahi Rajbhog, Kesar Pista Matka Kulfi, Gulkand Paan Bliss, and loaded Oreo-Mango Shakes with crunchy desi toppings.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <button onclick="filterCategory('icecream')" class="px-7 py-3.5 rounded-2xl bg-lemonZest text-hubDark font-bold hover:shadow-lg hover:shadow-lemonZest/30 hover:scale-105 transition-all text-sm sm:text-base flex items-center gap-2">
+                  <i class="fa-solid fa-spoon"></i> View Ice Creams
+                </button>
+                <button onclick="filterCategory('shakes')" class="px-6 py-3.5 rounded-2xl bg-slate-800/90 text-white font-semibold hover:bg-slate-700 border border-slate-600 transition-all text-sm sm:text-base flex items-center gap-2">
+                  <i class="fa-solid fa-mug-hot text-coolAqua"></i> Check Shakes
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Interior Soda Hub Vibe & Non-Alcoholic Beers -->
+          <div class="slide absolute inset-0 transition-opacity duration-700 opacity-0 pointer-events-none flex items-center">
+            <img 
+              src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1600&q=80" 
+              alt="Soda Hub Interior & Chilled Drinks" 
+              class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.35] contrast-110"
+              onerror="this.src='https://images.unsplash.com/photo-1579618218290-24a26f63a928?auto=format&fit=crop&w=1600&q=80'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-hubDark via-hubDark/80 to-transparent"></div>
+            
+            <div class="relative z-10 p-6 sm:p-12 md:p-16 max-w-2xl">
+              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-softBlue/20 text-softBlue border border-softBlue/40 text-xs sm:text-sm font-bold uppercase tracking-wider mb-4">
+                <i class="fa-solid fa-beer-mug-empty"></i> 100% Non-Alcoholic & Refreshing
+              </span>
+              <h2 class="text-3xl sm:text-5xl md:text-6xl font-display font-black leading-tight text-white mb-4">
+                CHILLED <span class="text-transparent bg-clip-text bg-gradient-to-r from-softBlue via-coolAqua to-limeGlow">FRUIT BEERS</span> & MOCKTAILS
+              </h2>
+              <p class="text-slate-300 text-sm sm:text-base md:text-lg mb-8 leading-relaxed">
+                Hang out with friends at our vibrant Khodiyar Colony soda parlor. Sip on Apple Malt Fruit Beer, Guava Chili Rock, and Fresh Pulpy Juices!
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <button onclick="filterCategory('beer')" class="px-7 py-3.5 rounded-2xl bg-softBlue text-hubDark font-bold hover:shadow-lg hover:shadow-softBlue/30 hover:scale-105 transition-all text-sm sm:text-base flex items-center gap-2">
+                  <i class="fa-solid fa-wine-glass"></i> Fruit Beers Menu
+                </button>
+                <a href="#mixology" class="px-6 py-3.5 rounded-2xl bg-slate-800/90 text-white font-semibold hover:bg-slate-700 border border-slate-600 transition-all text-sm sm:text-base flex items-center gap-2">
+                  <i class="fa-solid fa-sliders text-limeGlow"></i> Custom Mixology
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Slider Controls -->
+        <button onclick="prevSlide()" aria-label="Previous Slide" class="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-hubDark/70 hover:bg-limeGlow hover:text-hubDark text-white flex items-center justify-center border border-slate-600 transition-all z-20">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button onclick="nextSlide()" aria-label="Next Slide" class="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-hubDark/70 hover:bg-limeGlow hover:text-hubDark text-white flex items-center justify-center border border-slate-600 transition-all z-20">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <!-- Slider Pagination Dots -->
+        <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-20">
+          <button onclick="goToSlide(0)" class="slider-dot w-8 h-2.5 rounded-full bg-limeGlow transition-all" aria-label="Slide 1"></button>
+          <button onclick="goToSlide(1)" class="slider-dot w-3 h-2.5 rounded-full bg-slate-500 transition-all" aria-label="Slide 2"></button>
+          <button onclick="goToSlide(2)" class="slider-dot w-3 h-2.5 rounded-full bg-slate-500 transition-all" aria-label="Slide 3"></button>
+        </div>
+
+      </div>
+
+      <!-- Quick Feature Badges -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+        <div class="glass-card p-4 rounded-2xl flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-limeGlow/10 text-limeGlow flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Sub-Zero Chill</h4>
+            <p class="text-xs text-slate-400">Ultra-cold fizz every tap</p>
+          </div>
+        </div>
+
+        <div class="glass-card p-4 rounded-2xl flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-coolAqua/10 text-coolAqua flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-pepper-hot"></i>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Desi Masala Magic</h4>
+            <p class="text-xs text-slate-400">Secret Jamnagar spices</p>
+          </div>
+        </div>
+
+        <div class="glass-card p-4 rounded-2xl flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-lemonZest/10 text-lemonZest flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-white">100% Hygienic</h4>
+            <p class="text-xs text-slate-400">RO filtered water only</p>
+          </div>
+        </div>
+
+        <div class="glass-card p-4 rounded-2xl flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-softBlue/10 text-softBlue flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-white">8 AM – 11 PM</h4>
+            <p class="text-xs text-slate-400">Open 7 days a week</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SEARCH & MENU CATEGORIES SECTION ================= -->
+  <section id="menu" class="py-12 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs sm:text-sm font-black uppercase tracking-widest text-coolAqua bg-coolAqua/10 px-3.5 py-1.5 rounded-full border border-coolAqua/20 inline-block mb-3">
+          Live Interactive Menu
+        </span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white">
+          Taste The <span class="text-limeGlow">Fizz</span> & Enjoy The <span class="text-coolAqua">Chill</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Filter by category or search your favorite soda flavor, shake, fruit beer, or desi ice cream in Indian Rupees (₹).
+        </p>
+      </div>
+
+      <!-- Search Box & Filter Bar -->
+      <div class="glass-card p-4 sm:p-6 rounded-3xl mb-10 shadow-xl border border-slate-700/80">
+        <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+          
+          <!-- Live Search Input -->
+          <div class="relative w-full md:w-80">
+            <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+            <input 
+              type="text" 
+              id="menuSearchInput" 
+              placeholder="Search Orange, Lemon, Rajbhog, Blue Lagoon..." 
+              oninput="handleSearch()"
+              class="w-full pl-11 pr-10 py-3 bg-hubDark/90 border border-slate-700 rounded-2xl text-sm text-white placeholder-slate-400 focus:outline-none focus:border-limeGlow focus:ring-2 focus:ring-limeGlow/20 transition-all"
+            />
+            <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-sm">
+              <i class="fa-solid fa-circle-xmark"></i>
+            </button>
+          </div>
+
+          <!-- Category Pills -->
+          <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none text-xs sm:text-sm font-semibold">
+            <button onclick="filterCategory('all')" class="cat-pill active px-4 py-2.5 rounded-xl bg-limeGlow text-hubDark whitespace-nowrap transition-all shadow-md">
+              <i class="fa-solid fa-border-all mr-1.5"></i> All Items
+            </button>
+            <button onclick="filterCategory('soda')" class="cat-pill px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 whitespace-nowrap transition-all">
+              <i class="fa-solid fa-bottle-water mr-1.5 text-limeGlow"></i> Sodas
+            </button>
+            <button onclick="filterCategory('mocktail')" class="cat-pill px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 whitespace-nowrap transition-all">
+              <i class="fa-solid fa-martini-glass-citrus mr-1.5 text-coolAqua"></i> Mocktails
+            </button>
+            <button onclick="filterCategory('shakes')" class="cat-pill px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 whitespace-nowrap transition-all">
+              <i class="fa-solid fa-blender mr-1.5 text-lemonZest"></i> Shakes
+            </button>
+            <button onclick="filterCategory('beer')" class="cat-pill px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 whitespace-nowrap transition-all">
+              <i class="fa-solid fa-beer-mug-empty mr-1.5 text-amber-400"></i> Fruit Beers
+            </button>
+            <button onclick="filterCategory('juice')" class="cat-pill px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 whitespace-nowrap transition-all">
+              <i class="fa-solid fa-lemon mr-1.5 text-emerald-400"></i> Juices
+            </button>
+            <button onclick="filterCategory('icecream')" class="cat-pill px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 whitespace-nowrap transition-all">
+              <i class="fa-solid fa-ice-cream mr-1.5 text-pink-400"></i> Indian Ice-Cream
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Menu Items Grid -->
+      <div id="menuGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Javascript dynamically injects menu items here -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="emptyMenuState" class="hidden text-center py-16">
+        <div class="w-16 h-16 rounded-full bg-slate-800 text-slate-500 flex items-center justify-center mx-auto text-2xl mb-3">
+          <i class="fa-solid fa-wine-glass-empty"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white">No Drinks or Treats Found!</h3>
+        <p class="text-slate-400 text-sm mt-1">Try searching for something like "Orange", "Lemon", "Rajbhog", or "Mojito".</p>
+        <button onclick="resetMenuFilter()" class="mt-4 px-5 py-2 bg-limeGlow text-hubDark font-bold rounded-xl text-sm">
+          Reset Filter
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= DIY SODA MIXOLOGY LAB ================= -->
+  <section id="mixology" class="py-12 sm:py-16 bg-gradient-to-b from-transparent via-hubCard/60 to-transparent relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border-2 border-limeGlow/30 relative overflow-hidden">
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-coolAqua/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left: Mixology Controls -->
+          <div class="lg:col-span-7">
+            <span class="text-xs font-black tracking-widest text-lemonZest uppercase bg-lemonZest/10 px-3 py-1 rounded-full border border-lemonZest/30">
+              Interactive Drink Creator
+            </span>
+            <h3 class="text-2xl sm:text-4xl font-display font-extrabold text-white mt-2 mb-3">
+              Craft Your Own <span class="text-limeGlow">Custom Soda</span>
+            </h3>
+            <p class="text-slate-300 text-sm mb-6">
+              Customize your carbonation base, infusion syrups, and Jamnagar special masala twist in real-time.
+            </p>
+
+            <div class="space-y-4">
+              <!-- Step 1: Base -->
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">1. Choose Fizz Base</label>
+                <div class="grid grid-cols-3 gap-2" id="baseSelector">
+                  <button onclick="setCustomOption('base', 'Ultra Plain Soda', 20)" class="custom-base-btn active p-2.5 rounded-xl bg-limeGlow text-hubDark font-bold text-xs text-center transition-all border border-limeGlow">
+                    Ultra Plain Soda (₹20)
+                  </button>
+                  <button onclick="setCustomOption('base', 'Sprite Infusion', 35)" class="custom-base-btn p-2.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white font-bold text-xs text-center transition-all border border-slate-700">
+                    Sprite Base (₹35)
+                  </button>
+                  <button onclick="setCustomOption('base', 'Ginger Ale Sparkle', 40)" class="custom-base-btn p-2.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white font-bold text-xs text-center transition-all border border-slate-700">
+                    Ginger Ale (₹40)
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 2: Flavor -->
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">2. Select Primary Flavor</label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="flavorSelector">
+                  <button onclick="setCustomOption('flavor', 'Electric Orange', 20)" class="custom-flavor-btn active p-2 rounded-xl bg-coolAqua text-hubDark font-bold text-xs text-center border border-coolAqua">
+                    🍊 Orange (+₹20)
+                  </button>
+                  <button onclick="setCustomOption('flavor', 'Jamnagari Lemon', 15)" class="custom-flavor-btn p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white font-bold text-xs text-center border border-slate-700">
+                    🍋 Lemon (+₹15)
+                  </button>
+                  <button onclick="setCustomOption('flavor', 'Blue Lagoon Punch', 30)" class="custom-flavor-btn p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white font-bold text-xs text-center border border-slate-700">
+                    🌊 Blue Lagoon (+₹30)
+                  </button>
+                  <button onclick="setCustomOption('flavor', 'Kala Khatta Zing', 20)" class="custom-flavor-btn p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white font-bold text-xs text-center border border-slate-700">
+                    🍇 Kala Khatta (+₹20)
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 3: Desi Masala & Addons -->
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">3. Desi Topping / Twist</label>
+                <div class="grid grid-cols-3 gap-2" id="twistSelector">
+                  <button onclick="setCustomOption('twist', 'Khodiyar Special Masala', 10)" class="custom-twist-btn active p-2 rounded-xl bg-lemonZest text-hubDark font-bold text-xs text-center border border-lemonZest">
+                    🌶️ Special Masala (+₹10)
+                  </button>
+                  <button onclick="setCustomOption('twist', 'Fresh Mint & Lemon Slice', 10)" class="custom-twist-btn p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white font-bold text-xs text-center border border-slate-700">
+                    🌿 Fresh Mint (+₹10)
+                  </button>
+                  <button onclick="setCustomOption('twist', 'Sabja (Basil) Seeds', 15)" class="custom-twist-btn p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white font-bold text-xs text-center border border-slate-700">
+                    🌱 Sabja Seeds (+₹15)
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Live Virtual Glass Preview -->
+          <div class="lg:col-span-5 flex flex-col items-center">
+            <div class="w-full max-w-sm glass-card rounded-3xl p-6 border border-limeGlow/30 text-center shadow-2xl relative">
+              <div class="text-xs uppercase font-extrabold text-limeGlow mb-2">Live Drink Preview</div>
+              
+              <!-- Graphic Glass Simulation -->
+              <div class="relative w-28 h-40 mx-auto my-3 bg-gradient-to-b from-white/10 to-coolAqua/30 rounded-b-3xl border-2 border-slate-400/50 flex flex-col justify-end p-2 overflow-hidden shadow-inner">
+                <div id="liquidVisual" class="w-full h-3/4 rounded-b-2xl bg-gradient-to-t from-limeGlow to-coolAqua opacity-90 transition-all duration-500 relative flex items-center justify-center">
+                  <!-- Animated Bubble Dots -->
+                  <div class="absolute w-2 h-2 rounded-full bg-white/70 animate-bounce top-2 left-3"></div>
+                  <div class="absolute w-1.5 h-1.5 rounded-full bg-white/70 animate-ping bottom-3 right-4"></div>
+                  <i class="fa-solid fa-droplet text-hubDark/40 text-xl"></i>
+                </div>
+              </div>
+
+              <h4 id="customDrinkTitle" class="text-lg font-bold text-white">Electric Orange Soda Twist</h4>
+              <p id="customDrinkDesc" class="text-xs text-slate-400 mt-1">Ultra Plain Soda + Orange + Special Masala</p>
+
+              <div class="flex items-center justify-between mt-5 pt-4 border-t border-slate-700">
+                <div>
+                  <span class="text-xs text-slate-400 block">Total Price</span>
+                  <span id="customDrinkPrice" class="text-2xl font-black text-lemonZest">₹50</span>
+                </div>
+                <button onclick="addCustomDrinkToCart()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-limeGlow to-coolAqua text-hubDark font-extrabold text-sm hover:brightness-110 shadow-lg shadow-limeGlow/20 transition-all flex items-center gap-1.5">
+                  <i class="fa-solid fa-plus"></i> Add To Tray
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TOP PICKS & SPECIAL COMBOS ================= -->
+  <section id="specials" class="py-12 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+        <div>
+          <span class="text-xs font-black uppercase tracking-widest text-limeGlow bg-limeGlow/10 px-3 py-1 rounded-full border border-limeGlow/20">
+            Jamnagar's Favorites
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white mt-2">
+            Most Loved <span class="text-transparent bg-clip-text bg-gradient-to-r from-limeGlow to-coolAqua">House Specials</span>
+          </h2>
+        </div>
+        <p class="text-slate-400 text-sm max-w-md mt-2 md:mt-0">
+          Crafted with authentic ingredients, real fruit pulp, and carbonated to the perfect fizz balance.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Special 1 -->
+        <div class="glass-card rounded-3xl p-6 border border-slate-700 relative overflow-hidden group hover:scale-[1.02] transition-all duration-300">
+          <div class="absolute top-4 right-4 bg-coolAqua text-hubDark font-black text-xs px-2.5 py-1 rounded-full uppercase">
+            Signature Soda
+          </div>
+          <div class="w-14 h-14 rounded-2xl bg-coolAqua/20 text-coolAqua flex items-center justify-center text-2xl mb-4 group-hover:rotate-12 transition-transform">
+            <i class="fa-solid fa-water"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Blue Lagoon Soda Sparkle</h3>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2 mb-4 leading-relaxed">
+            Curacao syrup blended with fresh lime juice, crushed ice, and ultra-carbonated soda. Perfect cool refresher!
+          </p>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-700/80">
+            <span class="text-2xl font-black text-limeGlow">₹90</span>
+            <button onclick="addToCart(3, 'Blue Lagoon Soda Sparkle', 90, 'Mocktails')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-limeGlow hover:text-hubDark text-white text-xs font-bold transition-all flex items-center gap-1">
+              <i class="fa-solid fa-plus"></i> Order
+            </button>
+          </div>
+        </div>
+
+        <!-- Special 2 -->
+        <div class="glass-card rounded-3xl p-6 border border-slate-700 relative overflow-hidden group hover:scale-[1.02] transition-all duration-300">
+          <div class="absolute top-4 right-4 bg-lemonZest text-hubDark font-black text-xs px-2.5 py-1 rounded-full uppercase">
+            Desi Legend
+          </div>
+          <div class="w-14 h-14 rounded-2xl bg-lemonZest/20 text-lemonZest flex items-center justify-center text-2xl mb-4 group-hover:rotate-12 transition-transform">
+            <i class="fa-solid fa-pepper-hot"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Jamnagari Masala Lemon Fizz</h3>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2 mb-4 leading-relaxed">
+            Classic Saurashtra-style roasted jeera, black salt, fresh green lemon juice, and high-pressure fizzy soda.
+          </p>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-700/80">
+            <span class="text-2xl font-black text-limeGlow">₹35</span>
+            <button onclick="addToCart(1, 'Jamnagari Masala Lemon Fizz', 35, 'Sodas')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-limeGlow hover:text-hubDark text-white text-xs font-bold transition-all flex items-center gap-1">
+              <i class="fa-solid fa-plus"></i> Order
+            </button>
+          </div>
+        </div>
+
+        <!-- Special 3 -->
+        <div class="glass-card rounded-3xl p-6 border border-slate-700 relative overflow-hidden group hover:scale-[1.02] transition-all duration-300">
+          <div class="absolute top-4 right-4 bg-limeGlow text-hubDark font-black text-xs px-2.5 py-1 rounded-full uppercase">
+            Royal Sweet
+          </div>
+          <div class="w-14 h-14 rounded-2xl bg-limeGlow/20 text-limeGlow flex items-center justify-center text-2xl mb-4 group-hover:rotate-12 transition-transform">
+            <i class="fa-solid fa-crown"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Shahi Rajbhog Matka Ice Cream</h3>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2 mb-4 leading-relaxed">
+            Rich creamy kulfi ice-cream loaded with real saffron (Kesar), roasted almonds, pistachios, and rasgulla chunks.
+          </p>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-700/80">
+            <span class="text-2xl font-black text-limeGlow">₹85</span>
+            <button onclick="addToCart(6, 'Shahi Rajbhog Matka Ice Cream', 85, 'Ice Cream')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-limeGlow hover:text-hubDark text-white text-xs font-bold transition-all flex items-center gap-1">
+              <i class="fa-solid fa-plus"></i> Order
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= JAMNAGAR HUB LOCATION & GOOGLE MAPS ================= -->
+  <section id="location" class="py-14 relative bg-slate-900/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-black uppercase tracking-widest text-coolAqua bg-coolAqua/10 px-3.5 py-1.5 rounded-full border border-coolAqua/20 inline-block mb-3">
+          Find Your Soda Hub
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">
+          Visit Us at <span class="text-limeGlow">INOX Mall</span>, Jamnagar
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">
+          Easily locate us in Khodiyar Colony. Drop by for chilled sodas, shakes & ice cream with friends and family!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Hub Details Card -->
+        <div class="lg:col-span-5 flex flex-col justify-between glass-card p-6 sm:p-8 rounded-3xl border border-slate-700/80 shadow-2xl">
+          
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-700/80 pb-4 mb-6">
+              <div>
+                <h3 class="text-2xl font-display font-bold text-white">Fizz & Chill Soda Hub</h3>
+                <p class="text-xs text-coolAqua font-semibold mt-0.5">Khodiyar Colony Branch, Jamnagar</p>
+              </div>
+              <div class="w-12 h-12 rounded-2xl bg-limeGlow/10 text-limeGlow flex items-center justify-center text-xl">
+                <i class="fa-solid fa-store"></i>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="space-y-4 text-sm">
+              <div class="flex items-start gap-3.5">
+                <div class="w-8 h-8 rounded-lg bg-slate-800 text-lemonZest flex items-center justify-center shrink-0 mt-0.5">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white">Address</h4>
+                  <p class="text-slate-300 text-xs sm:text-sm mt-0.5 leading-relaxed">
+                    Shop No. 14, Food Zone, INOX Multiplex Mall, Khodiyar Colony Main Road, Jamnagar, Gujarat - 361006.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Timings -->
+              <div class="flex items-start gap-3.5">
+                <div class="w-8 h-8 rounded-lg bg-slate-800 text-limeGlow flex items-center justify-center shrink-0 mt-0.5">
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white">Operating Hours</h4>
+                  <p class="text-slate-300 text-xs sm:text-sm mt-0.5">
+                    Monday to Sunday: <strong class="text-limeGlow">8:00 AM – 11:00 PM</strong>
+                  </p>
+                  <p class="text-[11px] text-emerald-400 mt-1 flex items-center gap-1">
+                    <i class="fa-solid fa-circle-check"></i> Open All 365 Days
+                  </p>
+                </div>
+              </div>
+
+              <!-- Contact & WhatsApp -->
+              <div class="flex items-start gap-3.5">
+                <div class="w-8 h-8 rounded-lg bg-slate-800 text-coolAqua flex items-center justify-center shrink-0 mt-0.5">
+                  <i class="fa-solid fa-phone-volume"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white">Quick Connect & WhatsApp</h4>
+                  <p class="text-slate-300 text-xs sm:text-sm mt-0.5">
+                    +91 98250 12345 / +91 94280 67890
+                  </p>
+                  <p class="text-xs text-slate-400">Order online / Table reservation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="grid grid-cols-2 gap-3 mt-8 pt-6 border-t border-slate-700/80">
+            <a 
+              href="https://www.google.com/maps/search/?api=1&query=INOX+Mall+Khodiyar+Colony+Jamnagar" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="px-4 py-3 rounded-xl bg-coolAqua text-hubDark font-bold text-xs sm:text-sm text-center hover:brightness-110 transition-all flex items-center justify-center gap-1.5 shadow-md">
+              <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
+            </a>
+            <a 
+              href="https://wa.me/919825012345?text=Hello%20Fizz%20%26%20Chill%20Soda%20Hub!%20I%20want%20to%20order%20soda%20and%20ice%20cream." 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="px-4 py-3 rounded-xl bg-limeGlow text-hubDark font-bold text-xs sm:text-sm text-center hover:brightness-110 transition-all flex items-center justify-center gap-1.5 shadow-md">
+              <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Us
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Google Maps Embed Card -->
+        <div class="lg:col-span-7 glass-card rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl relative min-h-[380px] sm:min-h-[440px]">
+          <!-- Map Overlay Tag -->
+          <div class="absolute top-4 left-4 z-10 glass-nav px-3.5 py-1.5 rounded-xl border border-slate-600 text-xs text-white font-bold flex items-center gap-2 shadow-lg">
+            <i class="fa-solid fa-map-location-dot text-coolAqua"></i>
+            <span>Khodiyar Colony, Jamnagar</span>
+          </div>
+
+          <!-- Google Maps Iframe (Jamnagar INOX Area) -->
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14749.957262025178!2d70.03816694999999!3d22.4482596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39576bfefcfa592f%3A0xe5a3c9320eec9562!2sKhodiyar%20Colony%2C%20Jamnagar%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0; min-height: 100%; filter: contrast(1.05) brightness(0.9);" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Fizz & Chill Soda Hub Jamnagar Map Location"
+            class="w-full h-full absolute inset-0">
+          </iframe>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CUSTOMER REVIEWS / JAMNAGAR LOVE ================= -->
+  <section class="py-12 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-black uppercase tracking-widest text-lemonZest bg-lemonZest/10 px-3.5 py-1.5 rounded-full border border-lemonZest/20">
+          What Jamnagaris Say
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white mt-2">
+          Loved by Soda Enthusiasts
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="glass-card p-6 rounded-2xl border border-slate-700/60">
+          <div class="flex items-center gap-1 text-lemonZest text-xs mb-3">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-slate-300 text-xs sm:text-sm italic leading-relaxed">
+            "Best soda in Khodiyar Colony! The Jamnagari Lemon Masala Soda and Electric Orange have unbeatable fizz. Perfect stop after movies at INOX."
+          </p>
+          <div class="flex items-center gap-3 mt-4 pt-3 border-t border-slate-800">
+            <div class="w-8 h-8 rounded-full bg-limeGlow/20 text-limeGlow font-bold flex items-center justify-center text-xs">RJ</div>
+            <div>
+              <h5 class="text-xs font-bold text-white">Nikhil Shukla</h5>
+              <span class="text-[10px] text-slate-400">Jamnagar Resident</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border border-slate-700/60">
+          <div class="flex items-center gap-1 text-lemonZest text-xs mb-3">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-slate-300 text-xs sm:text-sm italic leading-relaxed">
+            "The Blue Lagoon Mocktail and Rajbhog Kulfi are heavenly. Their hygiene standards and RO water quality are top notch. Must visit!"
+          </p>
+          <div class="flex items-center gap-3 mt-4 pt-3 border-t border-slate-800">
+            <div class="w-8 h-8 rounded-full bg-coolAqua/20 text-coolAqua font-bold flex items-center justify-center text-xs">PP</div>
+            <div>
+              <h5 class="text-xs font-bold text-white">Pooja Patel</h5>
+              <span class="text-[10px] text-slate-400">Food Vlogger</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border border-slate-700/60">
+          <div class="flex items-center gap-1 text-lemonZest text-xs mb-3">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-slate-300 text-xs sm:text-sm italic leading-relaxed">
+            "Apple Malt Non-alcoholic beer and Soda with Sprite punch are so refreshing during hot afternoons. Great seating ambiance too."
+          </p>
+          <div class="flex items-center gap-3 mt-4 pt-3 border-t border-slate-800">
+            <div class="w-8 h-8 rounded-full bg-lemonZest/20 text-lemonZest font-bold flex items-center justify-center text-xs">AS</div>
+            <div>
+              <h5 class="text-xs font-bold text-white">Aniket Sharma</h5>
+              <span class="text-[10px] text-slate-400">College Student</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-hubDark border-t border-slate-800 pt-12 pb-8 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
+        
+        <!-- Brand Info -->
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-limeGlow to-coolAqua flex items-center justify-center text-hubDark font-black text-xl">
+              <i class="fa-solid fa-glass-water-droplet"></i>
+            </div>
+            <span class="font-display font-black text-2xl text-white">
+              FIZZ <span class="text-limeGlow">&</span> CHILL SODA HUB
+            </span>
+          </div>
+          <p class="text-slate-400 text-xs sm:text-sm max-w-md leading-relaxed">
+            Jamnagar's premier destination for carbonated sodas, exotic mocktails, rich thick shakes, crisp non-alcoholic fruit beers, fresh juices, and authentic Indian ice creams.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-limeGlow hover:text-hubDark text-slate-300 flex items-center justify-center transition-all"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-coolAqua hover:text-hubDark text-slate-300 flex items-center justify-center transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/919825012345" aria-label="WhatsApp" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-emerald-400 hover:text-hubDark text-slate-300 flex items-center justify-center transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white font-bold text-sm mb-3 uppercase tracking-wider text-limeGlow">Popular Drinks</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="#menu" onclick="filterCategory('soda')" class="hover:text-white transition-colors">Orange & Lemon Soda</a></li>
+            <li><a href="#menu" onclick="filterCategory('mocktail')" class="hover:text-white transition-colors">Blue Lagoon & Sprite Punch</a></li>
+            <li><a href="#menu" onclick="filterCategory('beer')" class="hover:text-white transition-colors">Craft Fruit Beer (Non-Alcoholic)</a></li>
+            <li><a href="#menu" onclick="filterCategory('icecream')" class="hover:text-white transition-colors">Rajbhog & Kesar Pista Matka</a></li>
+            <li><a href="#mixology" class="hover:text-white transition-colors">Custom DIY Mixology</a></li>
+          </ul>
+        </div>
+
+        <!-- Hub Address & Hours -->
+        <div>
+          <h4 class="text-white font-bold text-sm mb-3 uppercase tracking-wider text-coolAqua">Visit In Jamnagar</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            📍 INOX Mall, Khodiyar Colony,<br>
+            Jamnagar, Gujarat - 361006.<br><br>
+            ⏰ <strong>Open Daily:</strong> 8:00 AM – 11:00 PM<br>
+            📞 <strong>Direct Hub Line:</strong> +91 98250 12345
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Copyright Notice -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+        <p>© <span id="currentYear"></span> Fizz & Chill Soda Hub, Jamnagar. All Rights Reserved.</p>
+        <p class="text-slate-400 flex items-center gap-1">
+          Made with <span class="text-red-500">❤️</span> for Soda & Ice-Cream Lovers in Gujarat
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= SLIDE-OVER CART / TRAY DRAWER ================= -->
+  <div id="cartDrawerBackdrop" onclick="toggleCartDrawer()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+
+  <div id="cartDrawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-hubCard z-50 transform translate-x-full transition-transform duration-300 ease-in-out border-l border-slate-700 shadow-2xl flex flex-col">
+    
+    <!-- Drawer Header -->
+    <div class="p-5 border-b border-slate-700 flex items-center justify-between bg-hubDark">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl bg-limeGlow/20 text-limeGlow flex items-center justify-center font-bold text-sm">
+          <i class="fa-solid fa-basket-shopping"></i>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-lg text-white">Your Refreshment Tray</h3>
+          <span id="trayCountSubtitle" class="text-xs text-slate-400">0 items selected</span>
+        </div>
+      </div>
+      <button onclick="toggleCartDrawer()" class="w-8 h-8 rounded-lg bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center text-sm">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Drawer Items List -->
+    <div id="cartItemsList" class="flex-1 overflow-y-auto p-5 space-y-3">
+      <!-- Injected via JavaScript -->
+    </div>
+
+    <!-- Drawer Footer / Checkout -->
+    <div class="p-5 border-t border-slate-700 bg-hubDark space-y-3">
+      <div class="space-y-1.5 text-xs text-slate-300">
+        <div class="flex justify-between">
+          <span>Subtotal</span>
+          <span id="cartSubtotalText" class="font-bold text-white">₹0</span>
+        </div>
+        <div class="flex justify-between text-slate-400">
+          <span>Taxes & Hub Service</span>
+          <span class="text-limeGlow font-semibold">Included</span>
+        </div>
+        <div class="flex justify-between text-base font-black text-white pt-2 border-t border-slate-800">
+          <span>Total Payable</span>
+          <span id="cartGrandTotalText" class="text-lemonZest text-xl">₹0</span>
+        </div>
+      </div>
+
+      <!-- Order Options -->
+      <div class="grid grid-cols-2 gap-2 pt-2">
+        <button onclick="checkoutWhatsApp('pickup')" class="w-full py-3 rounded-xl bg-gradient-to-r from-limeGlow to-coolAqua text-hubDark font-black text-xs sm:text-sm hover:brightness-110 shadow-lg shadow-limeGlow/20 transition-all flex items-center justify-center gap-1.5">
+          <i class="fa-brands fa-whatsapp text-base"></i> Hub Takeaway
+        </button>
+        <button onclick="checkoutWhatsApp('dinein')" class="w-full py-3 rounded-xl bg-lemonZest text-hubDark font-black text-xs sm:text-sm hover:brightness-110 shadow-lg shadow-lemonZest/20 transition-all flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-chair text-sm"></i> Table Order
+        </button>
+      </div>
+      <p class="text-[10px] text-center text-slate-400">Directly sends your itemized selection to the Jamnagar hub on WhatsApp.</p>
+    </div>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 glass-nav border border-limeGlow/50 text-white px-5 py-2.5 rounded-2xl shadow-2xl text-xs sm:text-sm font-bold flex items-center gap-2 transform translate-y-20 opacity-0 transition-all duration-300">
+    <i class="fa-solid fa-circle-check text-limeGlow text-base"></i>
+    <span id="toastMsg">Item added to tray!</span>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // ================= MENU DATASET =================
+    const menuItems = [
+      // SODAS
+      {
+        id: 1,
+        name: "Jamnagari Masala Lemon Fizz",
+        category: "soda",
+        price: 35,
+        rating: 4.9,
+        badge: "Bestseller",
+        desc: "Authentic Saurashtra roasted cumin, black salt, fresh lemon & fizzy soda.",
+        img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 2,
+        name: "Electric Orange Blast Soda",
+        category: "soda",
+        price: 40,
+        rating: 4.8,
+        badge: "Favorite",
+        desc: "Tangy sweet Nagpur orange syrup with ultra-pressurized chilled bubbles.",
+        img: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 3,
+        name: "Classic Plain Chilled Soda",
+        category: "soda",
+        price: 20,
+        rating: 4.7,
+        badge: "Classic",
+        desc: "Sub-zero chilled pure RO carbonated soda with sharp effervescence.",
+        img: "https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 4,
+        name: "Kala Khatta Tangy Soda",
+        category: "soda",
+        price: 40,
+        rating: 4.8,
+        badge: "Desi Twist",
+        desc: "Classic Indian blackberry/jamun flavor with sour lemon notes & chatpata salt.",
+        img: "https://images.unsplash.com/photo-1546171753-97d7676e4602?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 5,
+        name: "Sprite Green Apple Cooler",
+        category: "soda",
+        price: 50,
+        rating: 4.9,
+        badge: "Hub Special",
+        desc: "Sprite paired with green apple extract, mint leaves, and ice rocks.",
+        img: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+      },
+
+      // MOCKTAILS
+      {
+        id: 6,
+        name: "Electric Blue Lagoon Soda",
+        category: "mocktail",
+        price: 90,
+        rating: 5.0,
+        badge: "Top Mocktail",
+        desc: "Blue curacao, lemon wedges, crushed mint & high-pressure soda fizz.",
+        img: "https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 7,
+        name: "Soda with Sprite Sunset Punch",
+        category: "mocktail",
+        price: 95,
+        rating: 4.8,
+        badge: "Must Try",
+        desc: "Layered grenadine, orange zest, Sprite sparkle, and fizzy soda splash.",
+        img: "https://images.unsplash.com/photo-1587223081156-610997491d22?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 8,
+        name: "Spicy Guava Chili Rock",
+        category: "mocktail",
+        price: 85,
+        rating: 4.9,
+        badge: "Popular",
+        desc: "Pink guava juice, red chili-rimmed glass, black salt, and sparkling soda.",
+        img: "https://images.unsplash.com/photo-1560512823-829485b8bf24?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 9,
+        name: "Virgin Fresh Mint Mojito",
+        category: "mocktail",
+        price: 85,
+        rating: 4.7,
+        badge: "Refreshing",
+        desc: "Muddled mint, fresh lime chunks, demerara sweetness, and crisp soda.",
+        img: "https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?auto=format&fit=crop&w=600&q=80"
+      },
+
+      // SHAKES
+      {
+        id: 10,
+        name: "Thick Alphonso Mango Shake",
+        category: "shakes",
+        price: 120,
+        rating: 4.9,
+        badge: "Rich & Thick",
+        desc: "Creamy whole milk, pure Ratnagiri Alphonso pulp, topped with mango cubes.",
+        img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 11,
+        name: "Oreo Chocolate Overload Shake",
+        category: "shakes",
+        price: 130,
+        rating: 4.8,
+        badge: "Kids Favorite",
+        desc: "Belgian chocolate ice cream blended with crushed Oreos and chocolate drizzle.",
+        img: "https://images.unsplash.com/photo-1579954115545-a95591f28be0?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 12,
+        name: "Royal Badam Pista Dryfruit Shake",
+        category: "shakes",
+        price: 140,
+        rating: 4.9,
+        badge: "Healthy & Rich",
+        desc: "Crushed almonds, pistachios, cardamom spice, and creamy thick dairy base.",
+        img: "https://images.unsplash.com/photo-1553787499-6f9133860278?auto=format&fit=crop&w=600&q=80"
+      },
+
+      // NON-ALCOHOLIC BEERS
+      {
+        id: 13,
+        name: "Apple Malt Fruit Beer (0.0%)",
+        category: "beer",
+        price: 80,
+        rating: 4.9,
+        badge: "0.0% Alcohol",
+        desc: "Crisp fermented barley malt infused with golden Himalayan apple cider.",
+        img: "https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 14,
+        name: "Ginger Fizz Malt Beer (0.0%)",
+        category: "beer",
+        price: 85,
+        rating: 4.7,
+        badge: "0.0% Alcohol",
+        desc: "Bold ginger punch brewed with smooth malt notes and frothy head.",
+        img: "https://images.unsplash.com/photo-1518099074172-bd5b74f03286?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 15,
+        name: "Peach Chilled Hop Sparkler (0.0%)",
+        category: "beer",
+        price: 90,
+        rating: 4.8,
+        badge: "0.0% Alcohol",
+        desc: "Fruity juicy peach notes balanced with floral aroma and sparkling carbonation.",
+        img: "https://images.unsplash.com/photo-1579618218290-24a26f63a928?auto=format&fit=crop&w=600&q=80"
+      },
+
+      // FRESH JUICES
+      {
+        id: 16,
+        name: "Chilled Mosambi Mint Cooler",
+        category: "juice",
+        price: 60,
+        rating: 4.8,
+        badge: "100% Pure",
+        desc: "Freshly cold-pressed sweet lime with black rock salt and fresh mint.",
+        img: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 17,
+        name: "Fresh Watermelon Rose Splash",
+        category: "juice",
+        price: 60,
+        rating: 4.7,
+        badge: "Hydrating",
+        desc: "Hydrating sweet watermelon juice lightly flavored with organic rose essence.",
+        img: "https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?auto=format&fit=crop&w=600&q=80"
+      },
+
+      // INDIAN FLAVOR ICE-CREAMS
+      {
+        id: 18,
+        name: "Shahi Rajbhog Matka Ice Cream",
+        category: "icecream",
+        price: 85,
+        rating: 5.0,
+        badge: "Royal Desi",
+        desc: "Saffron kulfi loaded with almonds, pistachios, cashew praline and rasgulla.",
+        img: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 19,
+        name: "Kesar Pista Authentic Kulfi Scoop",
+        category: "icecream",
+        price: 75,
+        rating: 4.9,
+        badge: "Traditional",
+        desc: "Slow-cooked condensed milk infused with Kashmiri Kesar and roasted pista.",
+        img: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 20,
+        name: "Gulkand Meetha Paan Bliss",
+        category: "icecream",
+        price: 75,
+        rating: 4.9,
+        badge: "Digestive Treat",
+        desc: "Real betel leaves, organic rose gulkand, fennel seeds, and creamy dairy base.",
+        img: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 21,
+        name: "Tender Coconut Malai Scoop",
+        category: "icecream",
+        price: 90,
+        rating: 4.8,
+        badge: "Natural Treat",
+        desc: "Real fresh coconut water & tender malai chunks churned into rich ice cream.",
+        img: "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=600&q=80"
+      }
+    ];
+
+    // ================= STATE MANAGEMENT =================
+    let currentCategory = "all";
+    let cart = [];
+    let customDrink = {
+      base: "Ultra Plain Soda",
+      basePrice: 20,
+      flavor: "Electric Orange",
+      flavorPrice: 20,
+      twist: "Khodiyar Special Masala",
+      twistPrice: 10
+    };
+
+    // ================= HERO SLIDER LOGIC =================
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    let sliderInterval = null;
+
+    function showSlide(index) {
+      if (index >= slides.length) currentSlide = 0;
+      else if (index < 0) currentSlide = slides.length - 1;
+      else currentSlide = index;
+
+      slides.forEach((slide, i) => {
+        if (i === currentSlide) {
+          slide.classList.remove('opacity-0', 'pointer-events-none');
+          slide.classList.add('opacity-100');
+        } else {
+          slide.classList.remove('opacity-100');
+          slide.classList.add('opacity-0', 'pointer-events-none');
+        }
+      });
+
+      dots.forEach((dot, i) => {
+        if (i === currentSlide) {
+          dot.className = "slider-dot w-8 h-2.5 rounded-full bg-limeGlow transition-all";
+        } else {
+          dot.className = "slider-dot w-3 h-2.5 rounded-full bg-slate-500 transition-all";
+        }
+      });
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+      resetSliderTimer();
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+      resetSliderTimer();
+    }
+
+    function goToSlide(i) {
+      showSlide(i);
+      resetSliderTimer();
+    }
+
+    function startSliderTimer() {
+      sliderInterval = setInterval(() => {
+        showSlide(currentSlide + 1);
+      }, 5500);
+    }
+
+    function resetSliderTimer() {
+      clearInterval(sliderInterval);
+      startSliderTimer();
+    }
+
+    // ================= LIVE TIMING STATUS =================
+    function checkLiveHubStatus() {
+      const now = new Date();
+      // Calculate based on Indian Hours (8:00 AM to 11:00 PM)
+      const currentHour = now.getHours();
+      const isOpen = currentHour >= 8 && currentHour < 23; // 8 to 23 (11 PM)
+
+      const statusBadge = document.getElementById('liveStatusBadge');
+      const statusText = document.getElementById('liveStatusText');
+
+      if (statusText) {
+        if (isOpen) {
+          statusText.textContent = "Open Now (Till 11 PM)";
+          statusText.className = "text-emerald-400";
+        } else {
+          statusText.textContent = "Opens 8:00 AM";
+          statusText.className = "text-amber-400";
+        }
+      }
+    }
+
+    // ================= MENU RENDERING & FILTERING =================
+    function renderMenu() {
+      const grid = document.getElementById('menuGrid');
+      const emptyState = document.getElementById('emptyMenuState');
+      const searchQuery = document.getElementById('menuSearchInput').value.toLowerCase().trim();
+
+      const filtered = menuItems.filter(item => {
+        const matchesCat = (currentCategory === "all" || item.category === currentCategory);
+        const matchesSearch = item.name.toLowerCase().includes(searchQuery) ||
+                              item.desc.toLowerCase().includes(searchQuery) ||
+                              item.category.toLowerCase().includes(searchQuery);
+        return matchesCat && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      grid.innerHTML = filtered.map(item => {
+        // Tag Color mapping
+        let badgeBg = "bg-limeGlow text-hubDark";
+        if (item.category === "mocktail") badgeBg = "bg-coolAqua text-hubDark";
+        if (item.category === "icecream") badgeBg = "bg-pink-400 text-hubDark";
+        if (item.category === "beer") badgeBg = "bg-amber-400 text-hubDark";
+
+        return `
+          <div class="glass-card rounded-3xl overflow-hidden border border-slate-700/80 hover:border-limeGlow/50 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-lg">
+            
+            <!-- Image Area -->
+            <div class="relative h-44 w-full overflow-hidden bg-slate-800">
+              <img 
+                src="${item.img}" 
+                alt="${item.name}" 
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-90"
+                loading="lazy"
+                onerror="this.src='https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80'"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-hubCard via-transparent to-transparent"></div>
+              
+              <!-- Badge -->
+              <span class="absolute top-3 left-3 ${badgeBg} font-black text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+                ${item.badge}
+              </span>
+
+              <!-- Rating -->
+              <span class="absolute bottom-2 right-3 bg-hubDark/80 backdrop-blur-sm text-lemonZest text-xs font-bold px-2 py-0.5 rounded-lg border border-slate-700 flex items-center gap-1">
+                <i class="fa-solid fa-star text-[10px]"></i> ${item.rating}
+              </span>
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] uppercase font-bold tracking-widest text-coolAqua block mb-1">
+                  ${item.category.toUpperCase()}
+                </span>
+                <h3 class="font-display font-bold text-base sm:text-lg text-white group-hover:text-limeGlow transition-colors line-clamp-1">
+                  ${item.name}
+                </h3>
+                <p class="text-xs text-slate-400 mt-1.5 line-clamp-2 leading-relaxed">
+                  ${item.desc}
+                </p>
+              </div>
+
+              <!-- Price & Action Button -->
+              <div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-700/80">
+                <div>
+                  <span class="text-[10px] text-slate-400 block uppercase">Hub Price</span>
+                  <span class="text-xl font-black text-limeGlow">₹${item.price}</span>
+                </div>
+                <button 
+                  onclick="addToCart(${item.id}, '${item.name.replace(/'/g, "\\'")}', ${item.price}, '${item.category}')" 
+                  class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-gradient-to-r hover:from-limeGlow hover:to-coolAqua hover:text-hubDark text-slate-200 font-bold text-xs transition-all flex items-center gap-1.5 border border-slate-600 hover:border-transparent active:scale-95 shadow-sm">
+                  <i class="fa-solid fa-plus text-xs"></i> Add
+                </button>
+              </div>
+            </div>
+
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        btn.classList.remove('bg-limeGlow', 'text-hubDark', 'active');
+        btn.classList.add('bg-slate-800', 'text-slate-300');
+      });
+
+      // Highlight target button
+      const target = Array.from(document.querySelectorAll('.cat-pill')).find(b => 
+        b.getAttribute('onclick') && b.getAttribute('onclick').includes(`'${cat}'`)
+      );
+      if (target) {
+        target.classList.remove('bg-slate-800', 'text-slate-300');
+        target.classList.add('bg-limeGlow', 'text-hubDark', 'active');
+      }
+
+      renderMenu();
+    }
+
+    function handleSearch() {
+      const val = document.getElementById('menuSearchInput').value;
+      const clearBtn = document.getElementById('clearSearchBtn');
+      if (val.length > 0) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+      renderMenu();
+    }
+
+    function clearSearch() {
+      document.getElementById('menuSearchInput').value = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      renderMenu();
+    }
+
+    function resetMenuFilter() {
+      document.getElementById('menuSearchInput').value = '';
+      filterCategory('all');
+    }
+
+    function focusSearch() {
+      const searchBox = document.getElementById('menuSearchInput');
+      const menuSection = document.getElementById('menu');
+      menuSection.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => searchBox.focus(), 600);
+    }
+
+    // ================= DIY MIXOLOGY LAB =================
+    function setCustomOption(type, name, price) {
+      if (type === 'base') {
+        customDrink.base = name;
+        customDrink.basePrice = price;
+        updateSelectorUI('.custom-base-btn', name);
+      } else if (type === 'flavor') {
+        customDrink.flavor = name;
+        customDrink.flavorPrice = price;
+        updateSelectorUI('.custom-flavor-btn', name);
+      } else if (type === 'twist') {
+        customDrink.twist = name;
+        customDrink.twistPrice = price;
+        updateSelectorUI('.custom-twist-btn', name);
+      }
+      updateCustomDrinkPreview();
+    }
+
+    function updateSelectorUI(selector, activeName) {
+      document.querySelectorAll(selector).forEach(btn => {
+        if (btn.innerText.includes(activeName.split(' ')[0])) {
+          btn.className = `${selector.replace('.', '')} active p-2.5 rounded-xl bg-limeGlow text-hubDark font-bold text-xs text-center border border-limeGlow`;
+        } else {
+          btn.className = `${selector.replace('.', '')} p-2.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white font-bold text-xs text-center border border-slate-700`;
+        }
+      });
+    }
+
+    function updateCustomDrinkPreview() {
+      const total = customDrink.basePrice + customDrink.flavorPrice + customDrink.twistPrice;
+      document.getElementById('customDrinkTitle').textContent = `${customDrink.flavor} ${customDrink.base.split(' ')[0]} Fizz`;
+      document.getElementById('customDrinkDesc').textContent = `${customDrink.base} + ${customDrink.flavor} + ${customDrink.twist}`;
+      document.getElementById('customDrinkPrice').textContent = `₹${total}`;
+
+      // Dynamic color shift in liquid
+      const liquid = document.getElementById('liquidVisual');
+      if (customDrink.flavor.includes('Orange')) {
+        liquid.className = "w-full h-3/4 rounded-b-2xl bg-gradient-to-t from-amber-500 to-yellow-400 opacity-90 transition-all duration-500 relative flex items-center justify-center";
+      } else if (customDrink.flavor.includes('Lemon')) {
+        liquid.className = "w-full h-3/4 rounded-b-2xl bg-gradient-to-t from-limeGlow to-lemonZest opacity-90 transition-all duration-500 relative flex items-center justify-center";
+      } else if (customDrink.flavor.includes('Blue')) {
+        liquid.className = "w-full h-3/4 rounded-b-2xl bg-gradient-to-t from-sky-600 to-coolAqua opacity-90 transition-all duration-500 relative flex items-center justify-center";
+      } else {
+        liquid.className = "w-full h-3/4 rounded-b-2xl bg-gradient-to-t from-purple-700 to-pink-500 opacity-90 transition-all duration-500 relative flex items-center justify-center";
+      }
+    }
+
+    function addCustomDrinkToCart() {
+      const total = customDrink.basePrice + customDrink.flavorPrice + customDrink.twistPrice;
+      const title = `DIY: ${customDrink.flavor} (${customDrink.base}, ${customDrink.twist})`;
+      const id = Date.now(); // unique ID
+      addToCart(id, title, total, "DIY Custom");
+    }
+
+    // ================= CART SYSTEM =================
+    function addToCart(id, name, price, category) {
+      const existing = cart.find(item => item.id === id && item.name === name);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ id, name, price, category, qty: 1 });
+      }
+      updateCartUI();
+      showToast(`Added "${name}" to your tray!`);
+    }
+
+    function changeQty(index, delta) {
+      if (cart[index]) {
+        cart[index].qty += delta;
+        if (cart[index].qty <= 0) {
+          cart.splice(index, 1);
+        }
+      }
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      document.getElementById('cartBadgeCount').textContent = count;
+      document.getElementById('trayCountSubtitle').textContent = `${count} items in your tray`;
+      document.getElementById('cartSubtotalText').textContent = `₹${subtotal}`;
+      document.getElementById('cartGrandTotalText').textContent = `₹${subtotal}`;
+
+      const list = document.getElementById('cartItemsList');
+
+      if (cart.length === 0) {
+        list.innerHTML = `
+          <div class="text-center py-12">
+            <div class="w-14 h-14 rounded-2xl bg-slate-800 text-slate-500 flex items-center justify-center mx-auto text-xl mb-3">
+              <i class="fa-solid fa-basket-shopping"></i>
+            </div>
+            <p class="text-sm font-bold text-white">Your tray is empty</p>
+            <p class="text-xs text-slate-400 mt-1">Add your favorite sodas, mocktails, and ice creams!</p>
+          </div>
+        `;
+        return;
+      }
+
+      list.innerHTML = cart.map((item, index) => `
+        <div class="glass-card p-3 rounded-2xl border border-slate-700/80 flex items-center justify-between gap-2">
+          <div class="flex-1">
+            <h5 class="text-xs font-bold text-white leading-tight">${item.name}</h5>
+            <span class="text-[11px] text-limeGlow font-semibold">₹${item.price} each</span>
+          </div>
+
+          <div class="flex items-center gap-2 bg-slate-800 px-2 py-1 rounded-xl border border-slate-700">
+            <button onclick="changeQty(${index}, -1)" class="text-xs text-slate-300 hover:text-white w-5 h-5 flex items-center justify-center font-bold">-</button>
+            <span class="text-xs font-black text-lemonZest">${item.qty}</span>
+            <button onclick="changeQty(${index}, 1)" class="text-xs text-slate-300 hover:text-white w-5 h-5 flex items-center justify-center font-bold">+</button>
+          </div>
+
+          <div class="text-right min-w-[50px]">
+            <span class="text-xs font-black text-white">₹${item.price * item.qty}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleCartDrawer() {
+      const drawer = document.getElementById('cartDrawer');
+      const backdrop = document.getElementById('cartDrawerBackdrop');
+      
+      const isOpen = !drawer.classList.contains('translate-x-full');
+      if (isOpen) {
+        drawer.classList.add('translate-x-full');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+      } else {
+        drawer.classList.remove('translate-x-full');
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+      }
+    }
+
+    function checkoutWhatsApp(type) {
+      if (cart.length === 0) {
+        showToast("Your tray is empty! Add items first.");
+        return;
+      }
+
+      const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      let orderText = `*⚡ NEW ORDER - FIZZ & CHILL SODA HUB (Jamnagar)*%0A`;
+      orderText += `*Order Type:* ${type === 'dinein' ? 'Table Order at INOX Mall' : 'Takeaway / Pickup'}%0A%0A`;
+      orderText += `*Selected Refreshments:*%0A`;
+      
+      cart.forEach((item, idx) => {
+        orderText += `${idx + 1}. ${item.name} x ${item.qty} = ₹${item.price * item.qty}%0A`;
+      });
+
+      orderText += `%0A*Total Amount:* ₹${total}%0A`;
+      orderText += `*Location:* INOX Mall, Khodiyar Colony, Jamnagar%0A`;
+      orderText += `Please confirm my order! 🥤`;
+
+      const hubWhatsAppNumber = "919825012345";
+      window.open(`https://wa.me/${hubWhatsAppNumber}?text=${orderText}`, '_blank');
+    }
+
+    // ================= TOAST NOTIFICATION =================
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+
+    // ================= MOBILE NAVIGATION =================
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const icon = document.getElementById('menuIcon');
+      menu.classList.toggle('hidden');
+      if (menu.classList.contains('hidden')) {
+        icon.className = "fa-solid fa-bars text-xl";
+      } else {
+        icon.className = "fa-solid fa-xmark text-xl";
+      }
+    }
+
+    // ================= INITIALIZATION =================
+    window.onload = function() {
+      // Set current year
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      
+      // Render initial menu
+      renderMenu();
+      
+      // Start slider
+      startSliderTimer();
+
+      // Check Open/Closed Hub Hours
+      checkLiveHubStatus();
+      setInterval(checkLiveHubStatus, 60000); // update every minute
+    };
+  </script>
+</body>
+</html>
